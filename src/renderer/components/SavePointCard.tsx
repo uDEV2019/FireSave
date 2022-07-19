@@ -101,6 +101,14 @@ const SavePointCard = (props: TProps) => {
 
   const screenshotPath: string | undefined = useMemo(() => {
     if (savePoint?.screenshotFileName) {
+      console.log({
+        test1: "file://",
+        test2: gameSavesPath,
+        test3: `__${game.id}`,
+        test4: savePoint.folderName,
+        test5: "__screenshots",
+        test6: savePoint?.screenshotFileName,
+      });
       return path.normalize(
         path.join(
           "file://",
@@ -332,9 +340,7 @@ const Screenshot = styled(Image)`
   object-fit: contain;
 `;
 
-const AddToFavoritesIcon = styled(Icon)`
-  z-index: 1;
-`;
+const AddToFavoritesIcon = styled(Icon)``;
 
 const AddToFavorites = styled.button`
   display: flex;
