@@ -14,9 +14,7 @@ const Markdown = (props: TMarkdownProps) => {
 
   const newChildren = children.replaceAll(
     "./images/",
-    path.normalize(
-      path.join(RESOURCES_PATH.replace("/%5C", ""), "docs/images/")
-    )
+    path.join(RESOURCES_PATH, "docs/images/")
   );
 
   return <Container remarkPlugins={[remarkGfm]}>{newChildren}</Container>;
